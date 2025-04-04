@@ -15,8 +15,10 @@ class CommentController extends Controller
             'content' => 'required|string'
         ]);
 
-        $post->create([
+        $post->comments()->create([
+
             'user_id' => Auth::id(),
+            'post_id' => Auth::id(),
             'content' => $request->content
         ]);
 
